@@ -1,0 +1,11 @@
+{% block plain %}
+
+Dear {{user}},
+here is one user want to touch with you
+{{first_name}}
+
+Thank you
+With regards,
+sree pharma.
+
+{% endblock %}
