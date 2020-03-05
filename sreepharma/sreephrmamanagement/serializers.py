@@ -7,6 +7,8 @@ from django.conf import settings
 
 def Emailsendserializer(**data):
     mail_subject = "USER RESPONCE"
+    print(data)
+    print(data['first_name'])
     contentmessage = render_to_string('user_mail', {
         'first_name': data['first_name']
     })

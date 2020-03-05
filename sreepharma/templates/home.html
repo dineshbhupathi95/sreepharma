@@ -83,7 +83,7 @@
 
 
 
-    <div class="site-blocks-cover overlay" style="background-image: url({% static 'images/sreepharma1.jpeg' %});" data-aos="fade" id="home-section">
+    <div class="site-blocks-cover overlay" style="background-image: url({% static 'images/sreepharmahome.jpeg' %});" data-aos="fade" id="home-section">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -149,20 +149,21 @@
         <div class="row mb-5">
           <div class="col-md-4 text-center">
             <p class="mb-4">
-              <span class="icon-room d-block h4 text-primary"></span>
-              <span>Chandanagar, Hyderabad, 500050</span>
+              <span><a class="icon-room d-block h4 text-primary" href="https://www.google.com/maps/place/17%C2%B029'24.7%22N+78%C2%B019'32.9%22E/@17.4901983,78.3236114,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d17.4901983!4d78.3258001?hl=en"></a></span>
+              <span>H.no:6-94/43/3,Ground Floor, Huda colony,
+                Chandanagar, serilingampally, Hyderabad, 500050, Telangana</span>
             </p>
           </div>
           <div class="col-md-4 text-center">
             <p class="mb-4">
               <span class="icon-phone d-block h4 text-primary"></span>
-              <a href="#">+91 9000004348</a>
+              <a href="#">+91 9100009855</a>
             </p>
           </div>
           <div class="col-md-4 text-center">
             <p class="mb-0">
               <span class="icon-mail_outline d-block h4 text-primary"></span>
-              <a href="#">sreepharma@gmail.com</a>
+              <a href="#">shreepharma2k19@gmail.com</a>
             </p>
           </div>
         </div>
@@ -170,7 +171,7 @@
           <div class="col-md-12 mb-5">
 
 
-
+<div id="user-form">
             <form action="#" class="p-5 bg-white">
 
               <h2 class="h4 text-black mb-5">Contact Form</h2>
@@ -211,12 +212,14 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+<!--                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">-->
+                  <button class="btn btn-primary btn-md text-white" onclick="save_user_data()">submit</button>
                 </div>
               </div>
 
 
             </form>
+  </div>
           </div>
 
         </div>
@@ -298,6 +301,52 @@
 
 
   <script src="{% static 'js/main.js'%}"></script>
+<!-- js-->
+  <script>
+   function save_user_data() {
+                    var fname = $("#fname").val();
+                    var lname = $("#lname").val();
+                    var email = $("#email").val();
+                    var subject = $("#subject").val();
+                    var message = $("#message").val();
+                    var user_data =
+                        {
+                            "first_name": fname,
+                            "last_name": lname,
+                            "email": email,
+                            "subject": subject,
+                            "message": "message"
+                        }
+                        console.log(user_data,'ll')
+                        save_user(user_data, function (data, status) {
+                            if (status == "success") {
+                                $("#fname").val("");
 
+                            }
+
+                        });
+                }
+</script>
+  <script>
+    function save_user(data, call_back) {
+    console.log(data,'ajax')
+            $.ajax({
+                type: "POST",
+                url: "/users/",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (data, status) {
+                    call_back(data, status);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                    return false;
+                }
+            });
+        }
+
+  </script>
+  <!--  end js-->
   </body>
 </html>
