@@ -5,7 +5,7 @@ chardet==3.0.4
 colorama==0.4.1
 cx-Oracle==7.0.0
 dj-database-url==0.5.0
-Django==2.1.5
+Django==2.2.13
 django-heroku==0.3.1
 django-session-timeout==0.0.3
 djangorestframework==3.9.1
