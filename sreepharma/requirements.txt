@@ -23,7 +23,7 @@ mysqlclient==1.4.2.post1
 numpy==1.16.1
 pandas==0.24.2
 patool==1.12
-Pillow==5.4.1
+Pillow==8.2.0
 protobuf==3.7.1
 psycopg2==2.7.7
 PyJWT==1.7.1
