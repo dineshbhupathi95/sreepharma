@@ -24,7 +24,7 @@ numpy==1.16.1
 pandas==0.24.2
 patool==1.12
 Pillow==5.4.1
-protobuf==3.7.1
+protobuf==3.15.0
 psycopg2==2.7.7
 PyJWT==1.7.1
 pylint==2.3.1
