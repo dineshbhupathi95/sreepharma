@@ -20,7 +20,7 @@ mccabe==0.6.1
 mysql-connector==2.1.6
 mysql-connector-python==8.0.15
 mysqlclient==1.4.2.post1
-numpy==1.16.1
+numpy==1.22.0
 pandas==0.24.2
 patool==1.12
 Pillow==5.4.1
